@@ -1,0 +1,184 @@
+/* The hero reproduces the 1440 x 926 Figma frame. Everything inside is sized
+   in container-query units (cqw) so the background image, phone mockup and
+   headline scale together and stay aligned at any viewport width.
+   1cqw = 1% of the hero width (= 14.4px at the 1440 design width). */
+.hero {
+  container-type: inline-size;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1440 / 926;
+  overflow: hidden;
+  background: var(--bg-subtile);
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* ---- Phone device mockup ---- */
+.hero__device {
+  position: absolute;
+  top: 30.903cqw;   /* 445 / 14.4 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30.208cqw; /* 435 */
+  height: 61.875cqw; /* 891 */
+}
+
+.hero__device-shadow {
+  position: absolute;
+  inset: 0 1%;
+  background: #000;
+  opacity: 0.38;
+  border-radius: 3.47cqw;
+  box-shadow: 0 0 4.7cqw 0 rgba(0, 0, 0, 0.8);
+}
+
+.hero__device-screen {
+  position: absolute;
+  inset: 1.94% 4.44% 1.94% 4.67%;
+  border-radius: 1.04cqw;
+  overflow: hidden;
+}
+
+.hero__device-screen img {
+  width: 100%;
+  height: 102.83%;
+  object-fit: cover;
+}
+
+.hero__device-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.hero__device-island {
+  position: absolute;
+  top: 2.569cqw;  /* 37 */
+  left: 14.097cqw; /* 203 */
+  width: 7.569cqw; /* 109 */
+  height: 2.292cqw; /* 33 */
+  background: #000;
+  border-radius: 3.47cqw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 0.55cqw;
+}
+
+.hero__device-island img {
+  width: 0.97cqw;
+  height: 0.97cqw;
+}
+
+/* ---- Headline ---- */
+.hero__fade {
+  position: absolute;
+  inset: 0;
+  background: var(--fade-bottom);
+  pointer-events: none;
+}
+
+.hero__intro {
+  position: absolute;
+  top: 12.222cqw; /* 176 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56.6cqw; /* 815 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.833cqw;
+  text-align: center;
+  pointer-events: auto;
+}
+
+.hero__title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 4.444cqw; /* 64 */
+  line-height: 5cqw;   /* 72 */
+  color: var(--yellow-800);
+}
+
+.hero__subtitle {
+  width: 52.7cqw; /* 759 */
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.389cqw; /* 20 */
+  line-height: 1.944cqw; /* 28 */
+  color: var(--text-primary-hover);
+}
+
+/* ---- Mobile: switch to a readable stacked layout ---- */
+@media (max-width: 768px) {
+  .hero {
+    aspect-ratio: auto;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__intro {
+    position: static;
+    transform: none;
+    width: min(92%, 520px);
+    gap: 12px;
+    margin-top: 120px;
+  }
+
+  .hero__title {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .hero__subtitle {
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .hero__device {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: min(80%, 320px);
+    height: auto;
+    aspect-ratio: 435 / 891;
+    margin-top: 32px;
+  }
+
+  .hero__device-shadow {
+    border-radius: 32px;
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.7);
+  }
+
+  .hero__device-screen {
+    border-radius: 12px;
+  }
+
+  .hero__device-island {
+    top: 14px;
+    left: 47%;
+    width: 80px;
+    height: 24px;
+    border-radius: 50px;
+  }
+
+  .hero__device-island img {
+    width: 8px;
+    height: 8px;
+  }
+}

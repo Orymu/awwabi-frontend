@@ -1,0 +1,92 @@
+/* ============================================================
+   Design tokens (extracted from the Niyyah / Awwabi Figma file)
+   ============================================================ */
+:root {
+  /* Font families */
+  --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-body: 'Geist', system-ui, -apple-system, sans-serif;
+  --font-brand: 'Inknut Antiqua', Georgia, serif;
+  --font-ui: 'Ubuntu', system-ui, sans-serif;
+  --font-field: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* Colors */
+  --color-white: #ffffff;
+  --bg-primary: #ffffff;
+  --bg-subtile: #fafafa;
+
+  --text-primary: #18181b;
+  --text-primary-hover: #27272a;
+  --text-subtile-bold: #71717a;
+  --text-field-label: #3b444c;
+
+  --border-hover: #d4d4d8;
+  --border-field: #efefef;
+
+  --yellow-700: #b45309;
+  --yellow-800: #92400e;
+  --yellow-900: #78350f;
+
+  /* Brand gradient (the warm "amber" pill button).
+     In Figma this is a vertical gradient whose visible band sits at the warm
+     amber end of the ramp, so the button reads as solid warm orange with a
+     subtle lighter sheen at the top. */
+  --gradient-amber: linear-gradient(
+    180deg,
+    #c17a43 0%,
+    #b86c30 45%,
+    #b45309 100%
+  );
+
+  /* Accent chips used in the inline headline */
+  --chip-rose: linear-gradient(180deg, #be123c 0%, #9f1239 100%);
+  --chip-orange: linear-gradient(180deg, #cc2c02 0%, #a1240b 100%);
+  --chip-green: #15803d;
+
+  /* Section fade backgrounds */
+  --fade-bottom: linear-gradient(
+    180deg,
+    rgba(250, 250, 250, 0.1) 67.788%,
+    #fafafa 97.115%
+  );
+
+  /* Layout */
+  --maxw: 1440px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+}

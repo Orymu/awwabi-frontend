@@ -1,0 +1,170 @@
+.cta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 80px 80px 0;
+  min-height: 934px;
+  overflow: hidden;
+  background: var(--color-white);
+}
+
+.cta__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  pointer-events: none;
+}
+
+/* Subtle fade only at the very top to soften the seam from the white
+   features section above. Kept small so the warm background image keeps its
+   full saturation across the section (matches Figma node 5018:579). */
+.cta__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    #fafafa 0%,
+    rgba(250, 250, 250, 0) 10%
+  );
+  pointer-events: none;
+}
+
+.cta__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  max-width: 1280px;
+}
+
+.cta__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.cta__title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 64px;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+}
+
+.cta__sub {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--text-subtile-bold);
+}
+
+/* ---- Form card ---- */
+.cta__card {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: min(512px, 100%);
+  padding: 32px;
+  border: 1px solid var(--border-hover);
+  border-radius: 8px;
+  background: var(--color-white);
+}
+
+.cta__success {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  color: var(--yellow-800);
+}
+
+/* ---- Footer ---- */
+.cta__footer {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 209px;
+  margin-top: auto;
+  padding-bottom: 32px;
+}
+
+.cta__footer-col {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  min-width: 0;
+  height: 100%;
+}
+
+.cta__footer-col--right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.cta__footer-brand {
+  font-family: var(--font-brand);
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+  color: var(--yellow-800);
+}
+
+.cta__footer-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 36px;
+  color: var(--yellow-800);
+}
+
+.cta__footer-text {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--yellow-700);
+}
+
+@media (max-width: 768px) {
+  .cta {
+    padding: 64px 24px 0;
+  }
+
+  .cta__title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .cta__sub {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .cta__footer {
+    flex-direction: column;
+    gap: 24px;
+    min-height: 0;
+  }
+
+  .cta__footer-col--right {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
