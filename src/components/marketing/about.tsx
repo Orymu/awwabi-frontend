@@ -47,6 +47,9 @@ export function About() {
   const [headlineRef, headlineInView] = useInView<HTMLParagraphElement>({
     threshold: 0.3,
   })
+  const [featuresRef, featuresInView] = useInView<HTMLDivElement>({
+    threshold: 0.15,
+  })
 
   return (
     <section
@@ -78,26 +81,47 @@ export function About() {
       </div>
 
       {/* Features */}
-      <div id="features" className="flex w-full max-w-[1280px] flex-col items-center gap-14">
+      <div
+        ref={featuresRef}
+        id="features"
+        className="flex w-full max-w-[1280px] flex-col items-center gap-14"
+      >
         <div className="flex w-full flex-col items-center gap-8">
           <SectionDivider />
           <div className="flex w-[min(714px,100%)] flex-col items-center gap-3 text-center">
-            <h2 className="m-0 font-serif text-[56px] font-normal leading-[64px] tracking-[-0.5px] text-[var(--color-ink)] max-md:text-[36px] max-md:leading-[44px]">
+            <h2
+              className={cn(
+                'feature-reveal m-0 font-serif text-[56px] font-normal leading-[64px] tracking-[-0.5px] text-[var(--color-ink)] max-md:text-[36px] max-md:leading-[44px]',
+                featuresInView && 'feature-reveal--in'
+              )}
+            >
               {featuresIntro.title[0]}
               <br />
               {featuresIntro.title[1]}
             </h2>
-            <p className="font-body text-2xl font-normal leading-8 text-muted max-md:text-lg max-md:leading-7">
+            <p
+              className={cn(
+                'feature-reveal font-body text-2xl font-normal leading-8 text-muted max-md:text-lg max-md:leading-7',
+                featuresInView && 'feature-reveal--in'
+              )}
+              style={{ '--feature-delay': '0.12s' } as React.CSSProperties}
+            >
               {featuresIntro.subtitle}
             </p>
           </div>
         </div>
 
         <div className="grid w-full grid-cols-4 gap-4 max-[1100px]:grid-cols-2 max-[560px]:grid-cols-1">
-          {features.map((feature) => (
+          {features.map((feature, i) => (
             <article
               key={feature.title}
-              className="flex flex-col gap-12 overflow-hidden rounded-lg border border-[var(--color-border-hover)] bg-subtile p-6 transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(24,24,27,0.08)]"
+              className={cn(
+                'feature-reveal flex flex-col gap-12 overflow-hidden rounded-lg border border-[var(--color-border-hover)] bg-subtile p-6 transition-[transform,box-shadow,opacity] duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(24,24,27,0.08)]',
+                featuresInView && 'feature-reveal--in'
+              )}
+              style={
+                { '--feature-delay': `${0.25 + i * 0.12}s` } as React.CSSProperties
+              }
             >
               <Image
                 src={feature.icon}
