@@ -90,3 +90,29 @@ button {
 p {
   margin: 0;
 }
+
+/* ============================================================
+   Scroll-triggered text reveal
+   Muted light-gray + low opacity in the resting state, easing
+   into solid, high-contrast text as it enters the viewport.
+   Color and opacity only — no positional movement.
+   ============================================================ */
+.reveal-text {
+  color: #d4d4d8;
+  opacity: 0.55;
+  transition:
+    color 0.9s ease-in-out,
+    opacity 0.9s ease-in-out;
+  will-change: color, opacity;
+}
+
+.reveal-text--in {
+  color: #000000;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-text {
+    transition: none;
+  }
+}

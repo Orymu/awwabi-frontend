@@ -30,7 +30,7 @@
   font-size: 56px;
   line-height: 64px;
   text-align: center;
-  color: var(--text-primary);
+  /* color is driven by the .reveal-text scroll animation */
 }
 
 .about__inline {

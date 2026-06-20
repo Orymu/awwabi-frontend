@@ -6,6 +6,7 @@ import featScroll from '../assets/feat-scroll.svg'
 import featFire from '../assets/feat-fire.svg'
 import featChartbar from '../assets/feat-chartbar.svg'
 import featCrosshair from '../assets/feat-crosshair.svg'
+import useInView from '../hooks/useInView'
 import './About.css'
 
 const FEATURES = [
@@ -36,12 +37,19 @@ function SectionDivider() {
 }
 
 export default function About() {
+  const [headlineRef, headlineInView] = useInView({ threshold: 0.3 })
+
   return (
     <section className="about" id="cara-kerja">
       {/* Mission statement with inline icon chips */}
       <div className="about__statement">
         <SectionDivider />
-        <p className="about__headline">
+        <p
+          ref={headlineRef}
+          className={`about__headline reveal-text${
+            headlineInView ? ' reveal-text--in' : ''
+          }`}
+        >
           Niyyah hadir sebagai habit companion yang membantu{' '}
           <span className="about__inline">
             mencatat
