@@ -53,17 +53,32 @@ export default function About() {
           Niyyah hadir sebagai habit companion yang membantu{' '}
           <span className="about__inline">
             mencatat
-            <span className="about__chip about__chip--rose">
+            <span
+              className={`about__chip about__chip--rose chip-reveal${
+                headlineInView ? ' chip-reveal--in' : ''
+              }`}
+              style={{ '--chip-delay': '0.5s' }}
+            >
               <img src={iconScrollSm} alt="" aria-hidden="true" />
             </span>
             ,{' '}
             memantau
-            <span className="about__chip about__chip--orange">
+            <span
+              className={`about__chip about__chip--orange chip-reveal${
+                headlineInView ? ' chip-reveal--in' : ''
+              }`}
+              style={{ '--chip-delay': '0.7s' }}
+            >
               <img src={iconSidebarSm} alt="" aria-hidden="true" />
             </span>
             ,{' '}
             dan menjaga niat
-            <span className="about__chip about__chip--green">
+            <span
+              className={`about__chip about__chip--green chip-reveal${
+                headlineInView ? ' chip-reveal--in' : ''
+              }`}
+              style={{ '--chip-delay': '0.9s' }}
+            >
               <img src={iconUserlistSm} alt="" aria-hidden="true" />
             </span>
           </span>{' '}
