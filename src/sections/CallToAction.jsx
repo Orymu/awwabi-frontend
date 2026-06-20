@@ -4,11 +4,13 @@ import iconUser from '../assets/icon-user.svg'
 import iconEnvelope from '../assets/icon-envelope.svg'
 import TextInput from '../components/TextInput'
 import WaitlistButton from '../components/WaitlistButton'
+import useInView from '../hooks/useInView'
 import './CallToAction.css'
 
 export default function CallToAction() {
   const [form, setForm] = useState({ name: '', email: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [footerRef, footerInView] = useInView({ threshold: 0.25 })
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -62,14 +64,25 @@ export default function CallToAction() {
           )}
         </form>
 
-        <footer className="cta__footer">
-          <div className="cta__footer-col">
+        <footer
+          ref={footerRef}
+          className={`cta__footer footer-reveal${
+            footerInView ? ' footer-reveal--in' : ''
+          }`}
+        >
+          <div
+            className="cta__footer-col footer-col-anim"
+            style={{ '--footer-delay': '0s' }}
+          >
             <p className="cta__footer-brand">Awwabi</p>
             <p className="cta__footer-text">
               Tumbuh bersama, hari per hari. | © 2026 Niyyah.
             </p>
           </div>
-          <div className="cta__footer-col cta__footer-col--right">
+          <div
+            className="cta__footer-col cta__footer-col--right footer-col-anim"
+            style={{ '--footer-delay': '0.15s' }}
+          >
             <p className="cta__footer-title">Contact Us</p>
             <p className="cta__footer-text">Instagram • Gmail • WhatsApp</p>
           </div>

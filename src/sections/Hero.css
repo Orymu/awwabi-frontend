@@ -182,3 +182,55 @@
     height: 8px;
   }
 }
+
+/* ============================================================
+   Hero entrance animation (plays once on page load)
+   Title & subtitle gently fade up; the phone fades/zooms in.
+   The device is centered with translateX(-50%), so its entrance
+   uses opacity + a scoped scale keyframe to avoid breaking that.
+   ============================================================ */
+.hero-anim--title,
+.hero-anim--subtitle {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: hero-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-anim--title {
+  animation-delay: 0.15s;
+}
+
+.hero-anim--subtitle {
+  animation-delay: 0.35s;
+}
+
+@keyframes hero-rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-anim--device {
+  opacity: 0;
+  animation: hero-device-in 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.45s forwards;
+}
+
+@keyframes hero-device-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-anim--title,
+  .hero-anim--subtitle,
+  .hero-anim--device {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}

@@ -10,7 +10,7 @@ export default function Hero() {
       <img className="hero__bg" src={heroBg} alt="" aria-hidden="true" />
 
       {/* Phone mockup */}
-      <div className="hero__device">
+      <div className="hero__device hero-anim hero-anim--device">
         <div className="hero__device-shadow" aria-hidden="true" />
         <div className="hero__device-screen">
           <img src={phoneScreenshot} alt="Tampilan aplikasi Niyyah di ponsel" />
@@ -24,10 +24,10 @@ export default function Hero() {
       {/* Bottom fade + headline */}
       <div className="hero__fade">
         <div className="hero__intro">
-          <h1 className="hero__title">
+          <h1 className="hero__title hero-anim hero-anim--title">
             Mulai Harimu dengan Niyyah yang Penuh Makna
           </h1>
-          <p className="hero__subtitle">
+          <p className="hero__subtitle hero-anim hero-anim--subtitle">
             Habit tracker pertama yang dirancang khusus untuk muslimah melacak
             ibadah, produktivitas, dan pertumbuhan dirimu setiap hari.
           </p>
