@@ -1,4 +1,15 @@
+'use client'
+
 import { useEffect, useRef, useState } from 'react'
+
+export interface UseInViewOptions {
+  /** fraction visible before firing (0-1) */
+  threshold?: number
+  /** viewport margin around the root */
+  rootMargin?: string
+  /** stop observing after the first reveal */
+  once?: boolean
+}
 
 /**
  * Returns a ref and an `inView` flag that flips to true the first time the
@@ -6,19 +17,13 @@ import { useEffect, useRef, useState } from 'react'
  *
  * Respects `prefers-reduced-motion`: when the user opts out of motion, the
  * element is reported as in view immediately so no animation plays.
- *
- * @param {object} [options]
- * @param {number} [options.threshold=0.35] - fraction visible before firing
- * @param {string} [options.rootMargin='0px 0px -10% 0px'] - viewport margin
- * @param {boolean} [options.once=true] - stop observing after first reveal
- * @returns {[React.RefObject<HTMLElement>, boolean]}
  */
-export default function useInView({
+export function useInView<T extends HTMLElement = HTMLElement>({
   threshold = 0.35,
   rootMargin = '0px 0px -10% 0px',
   once = true,
-} = {}) {
-  const ref = useRef(null)
+}: UseInViewOptions = {}) {
+  const ref = useRef<T>(null)
   const [inView, setInView] = useState(false)
 
   useEffect(() => {
@@ -50,5 +55,5 @@ export default function useInView({
     return () => observer.disconnect()
   }, [threshold, rootMargin, once])
 
-  return [ref, inView]
+  return [ref, inView] as const
 }
