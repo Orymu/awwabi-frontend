@@ -1,9 +1,9 @@
 /**
- * Static content for the Niyyah landing page (home route).
+ * Static content for the Awwabi landing page (home route).
  */
 
 export const hero = {
-  title: 'Mulai Harimu dengan Niyyah yang Penuh Makna',
+  title: 'Mulai Harimu dengan Awwabi yang Penuh Makna',
   subtitle:
     'Habit tracker pertama yang dirancang khusus untuk muslimah melacak ibadah, produktivitas, dan pertumbuhan dirimu setiap hari.',
 } as const
@@ -38,13 +38,13 @@ export const featuresIntro = {
 } as const
 
 export const cta = {
-  title: 'Jadilah yang Pertama Merasakan Niyyah',
+  title: 'Jadilah yang Pertama Merasakan Awwabi',
   subtitle: 'Daftarkan emailmu sekarang dan dapatkan:',
-  successMessage: 'Terima kasih! Kamu sudah masuk waiting list Niyyah.',
+  successMessage: 'Terima kasih! Kamu sudah masuk waiting list Awwabi.',
 } as const
 
 export const footer = {
-  tagline: 'Tumbuh bersama, hari per hari. | © 2026 Niyyah.',
+  tagline: 'Tumbuh bersama, hari per hari. | © 2026 Awwabi.',
   contactTitle: 'Contact Us',
 } as const
 

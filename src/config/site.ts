@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: 'Awwabi',
-  product: 'Niyyah',
+  product: 'Awwabi',
   description:
     'Habit tracker pertama yang dirancang khusus untuk muslimah melacak ibadah, produktivitas, dan pertumbuhan dirimu setiap hari.',
   url: 'https://awwabi.app',

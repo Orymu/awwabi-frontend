@@ -17,7 +17,7 @@ export default function AboutPage() {
         {siteConfig.description}
       </p>
       <p className="font-body text-base leading-7 text-[var(--color-ink-hover)]">
-        Niyyah hadir sebagai habit companion yang membantu mencatat, memantau,
+        Awwabi hadir sebagai habit companion yang membantu mencatat, memantau,
         dan menjaga niat secara sederhana dan visual, agar perjalanan istiqomah
         terasa lebih ringan dan konsisten.
       </p>

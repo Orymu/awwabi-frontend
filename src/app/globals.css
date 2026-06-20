@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 /* ============================================================
-   Design tokens (Niyyah / Awwabi) exposed to Tailwind v4 via @theme.
+   Design tokens (Awwabi) exposed to Tailwind v4 via @theme.
    These generate utilities like text-ink, bg-subtile, font-serif, etc.
    ============================================================ */
 @theme {

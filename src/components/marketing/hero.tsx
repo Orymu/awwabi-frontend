@@ -23,7 +23,7 @@ export function Hero() {
         <div className="absolute inset-[1.94%_4.44%_1.94%_4.67%] overflow-hidden rounded-[1.04cqw] max-md:rounded-[12px]">
           <Image
             src="/assets/phone-screenshot.png"
-            alt="Tampilan aplikasi Niyyah di ponsel"
+            alt="Tampilan aplikasi Awwabi di ponsel"
             width={1236}
             height={2751}
             className="h-[102.83%] w-full object-cover"

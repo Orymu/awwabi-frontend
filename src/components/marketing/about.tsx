@@ -66,7 +66,7 @@ export function About() {
             headlineInView && 'reveal-text--in'
           )}
         >
-          Niyyah hadir sebagai habit companion yang membantu{' '}
+          Awwabi hadir sebagai habit companion yang membantu{' '}
           <span className="inline">
             mencatat
             <Chip {...CHIPS[0]} inView={headlineInView} />,{' '}
