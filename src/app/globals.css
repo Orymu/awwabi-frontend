@@ -77,6 +77,12 @@ body {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
   }
+
+  /* Mobile-specific hero layout improvements */
+  .mobile-hero-container {
+    height: 100vh;
+    height: 100svh;
+  }
 }
 
 /* ============================================================
