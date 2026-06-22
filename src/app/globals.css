@@ -50,6 +50,36 @@ body {
 }
 
 /* ============================================================
+   Mobile viewport fixes and layout improvements
+   ============================================================ */
+@media (max-width: 768px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+  
+  * {
+    /* Prevent horizontal scroll issues */
+    max-width: 100%;
+  }
+
+  /* Mobile hero section specific improvements */
+  #home {
+    background-attachment: scroll !important;
+  }
+
+  /* Ensure proper mobile navigation spacing */
+  nav {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+
+/* ============================================================
    Scroll-triggered text reveal (mission statement headline)
    ============================================================ */
 .reveal-text {
@@ -95,6 +125,19 @@ body {
   }
 }
 
+/* Mobile chip optimization */
+@media (max-width: 640px) {
+  @keyframes chip-float {
+    0%,
+    100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-2px) scale(1.02);
+    }
+  }
+}
+
 /* ============================================================
    Hero entrance (plays once on load)
    ============================================================ */
@@ -134,6 +177,21 @@ body {
   }
 }
 
+/* Mobile hero optimizations */
+@media (max-width: 768px) {
+  .hero-anim--title,
+  .hero-anim--subtitle {
+    transform: translateY(12px);
+  }
+  
+  @keyframes hero-rise {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
 /* ============================================================
    Footer reveal
    ============================================================ */
@@ -167,6 +225,34 @@ body {
 .feature-reveal--in {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Mobile feature optimizations */
+@media (max-width: 768px) {
+  .feature-reveal {
+    transform: translateY(20px);
+  }
+}
+
+/* ============================================================
+   Touch and interaction improvements for mobile
+   ============================================================ */
+@media (max-width: 768px) {
+  /* Better tap targets */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improve form interactions */
+  input, textarea, select {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Better scrolling on mobile */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
