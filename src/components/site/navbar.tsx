@@ -14,7 +14,10 @@ export function Navbar() {
       <ul className="flex flex-1 list-none items-center justify-center gap-[26px] font-ui text-base font-medium leading-6 text-[var(--color-ink)] max-lg:gap-4 max-md:hidden">
         {siteConfig.nav.map((link) => (
           <li key={link.label}>
-            <a href={link.href} className="transition-colors hover:text-yellow-800">
+            <a
+              href={link.href}
+              className="transition-colors hover:text-yellow-800"
+            >
               {link.label}
             </a>
           </li>

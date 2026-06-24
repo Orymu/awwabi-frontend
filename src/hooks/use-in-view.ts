@@ -31,12 +31,18 @@ export function useInView<T extends HTMLElement = HTMLElement>({
     if (!el) return
 
     const prefersReducedMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
+      '(prefers-reduced-motion: reduce)',
     ).matches
 
-    if (prefersReducedMotion || typeof IntersectionObserver === 'undefined') {
-      setInView(true)
+    // The reduced-motion CSS makes reveal elements visible without requiring
+    // React state, so no synchronous effect update is needed here.
+    if (prefersReducedMotion) {
       return
+    }
+
+    if (typeof IntersectionObserver === 'undefined') {
+      const frame = window.requestAnimationFrame(() => setInView(true))
+      return () => window.cancelAnimationFrame(frame)
     }
 
     const observer = new IntersectionObserver(
@@ -48,7 +54,7 @@ export function useInView<T extends HTMLElement = HTMLElement>({
           setInView(false)
         }
       },
-      { threshold, rootMargin }
+      { threshold, rootMargin },
     )
 
     observer.observe(el)

@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
 
-interface TextInputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string
   /** path to the leading icon (served from /public) */
   icon?: string
@@ -35,7 +34,7 @@ export function TextInput({
           'flex min-h-12 items-center gap-2 rounded-lg border border-[var(--color-border-field)] bg-white px-4 max-md:min-h-[48px] max-md:px-3',
           'transition-[border-color,box-shadow] duration-150 ease-out',
           'focus-within:border-yellow-800 focus-within:shadow-[0_0_0_3px_rgba(180,83,9,0.12)]',
-          className
+          className,
         )}
       >
         {icon && (

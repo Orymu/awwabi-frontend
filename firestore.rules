@@ -1,0 +1,26 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Waitlist records contain personal data and are only accessible through
+    // the trusted server endpoint. Firebase Admin access is controlled by IAM.
+    match /products/{productId}/waitlist_entries/{entryId} {
+      allow read, write: if false;
+    }
+
+    // Rate-limit records contain short-lived pseudonymous identifiers.
+    match /products/{productId}/rate_limits/{limitId} {
+      allow read, write: if false;
+    }
+
+    // Product metadata is administered by trusted tooling only.
+    match /products/{productId} {
+      allow read, write: if false;
+    }
+
+    // Deny any collection added without an explicit security decision.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,7 +1,6 @@
 import { cn } from '@/lib/utils'
 
-interface WaitlistButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface WaitlistButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   fullWidth?: boolean
 }
 
@@ -28,7 +27,7 @@ export function WaitlistButton({
         'active:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-800',
         'max-md:px-3 max-md:py-2 max-md:text-xs max-sm:px-3 max-sm:text-xs',
         fullWidth && 'w-full',
-        className
+        className,
       )}
       style={{ backgroundImage: 'var(--gradient-amber)' }}
       {...props}

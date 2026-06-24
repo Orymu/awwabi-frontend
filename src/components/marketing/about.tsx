@@ -34,11 +34,23 @@ function Chip({
       className={cn(
         'chip-reveal mx-1 inline-flex size-12 items-center justify-center rounded-[10px] align-middle max-md:size-[38px]',
         variant !== 'green' && 'shadow-[inset_0_0_8px_1px_rgba(180,83,9,0.5)]',
-        inView && 'chip-reveal--in'
+        inView && 'chip-reveal--in',
       )}
-      style={{ background: chipBg[variant], '--chip-delay': delay } as React.CSSProperties}
+      style={
+        {
+          background: chipBg[variant],
+          '--chip-delay': delay,
+        } as React.CSSProperties
+      }
     >
-      <Image src={icon} alt="" aria-hidden="true" width={24} height={24} className="size-6 max-md:size-5" />
+      <Image
+        src={icon}
+        alt=""
+        aria-hidden="true"
+        width={24}
+        height={24}
+        className="size-6 max-md:size-5"
+      />
     </span>
   )
 }
@@ -63,16 +75,14 @@ export function About() {
           ref={headlineRef}
           className={cn(
             'reveal-text text-center font-serif text-[56px] font-normal leading-[64px] max-md:text-[28px] max-md:leading-[36px] max-sm:text-[24px] max-sm:leading-[32px]',
-            headlineInView && 'reveal-text--in'
+            headlineInView && 'reveal-text--in',
           )}
         >
           Awwabi hadir sebagai habit companion yang membantu{' '}
           <span className="inline">
             mencatat
-            <Chip {...CHIPS[0]} inView={headlineInView} />,{' '}
-            memantau
-            <Chip {...CHIPS[1]} inView={headlineInView} />,{' '}
-            dan menjaga niat
+            <Chip {...CHIPS[0]} inView={headlineInView} />, memantau
+            <Chip {...CHIPS[1]} inView={headlineInView} />, dan menjaga niat
             <Chip {...CHIPS[2]} inView={headlineInView} />
           </span>{' '}
           secara sederhana dan visual, agar perjalanan istiqomah terasa lebih
@@ -92,7 +102,7 @@ export function About() {
             <h2
               className={cn(
                 'feature-reveal m-0 font-serif text-[56px] font-normal leading-[64px] tracking-[-0.5px] text-[var(--color-ink)] max-md:text-[32px] max-md:leading-[40px] max-sm:text-[28px] max-sm:leading-[36px]',
-                featuresInView && 'feature-reveal--in'
+                featuresInView && 'feature-reveal--in',
               )}
             >
               {featuresIntro.title[0]}
@@ -102,7 +112,7 @@ export function About() {
             <p
               className={cn(
                 'feature-reveal font-body text-2xl font-normal leading-8 text-muted max-md:text-lg max-md:leading-6 max-sm:text-base max-sm:leading-6',
-                featuresInView && 'feature-reveal--in'
+                featuresInView && 'feature-reveal--in',
               )}
               style={{ '--feature-delay': '0.12s' } as React.CSSProperties}
             >
@@ -117,10 +127,12 @@ export function About() {
               key={feature.title}
               className={cn(
                 'feature-reveal flex flex-col gap-12 overflow-hidden rounded-lg border border-[var(--color-border-hover)] bg-subtile p-6 transition-[transform,box-shadow,opacity] duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(24,24,27,0.08)] max-md:gap-8 max-md:p-5 max-sm:gap-6 max-sm:p-4',
-                featuresInView && 'feature-reveal--in'
+                featuresInView && 'feature-reveal--in',
               )}
               style={
-                { '--feature-delay': `${0.25 + i * 0.12}s` } as React.CSSProperties
+                {
+                  '--feature-delay': `${0.25 + i * 0.12}s`,
+                } as React.CSSProperties
               }
             >
               <Image
