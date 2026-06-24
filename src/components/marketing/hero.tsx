@@ -19,36 +19,16 @@ export function Hero() {
           className="pointer-events-none object-cover"
         />
 
-        {/* Phone mockup - Desktop positioning */}
-        <div className="hero-anim--device absolute left-1/2 top-[30.903cqw] h-[61.875cqw] w-[30.208cqw] -translate-x-1/2">
-          <div className="absolute inset-x-[1%] inset-y-0 rounded-[3.47cqw] bg-black opacity-[0.38] shadow-[0_0_4.7cqw_0_rgba(0,0,0,0.8)]" />
-          <div className="absolute inset-[1.94%_4.44%_1.94%_4.67%] overflow-hidden rounded-[1.04cqw]">
-            <Image
-              src="/assets/phone-screenshot.png"
-              alt="Tampilan aplikasi Awwabi di ponsel"
-              width={1236}
-              height={2751}
-              className="h-[102.83%] w-full object-cover"
-            />
-          </div>
+        {/* Phone mockup - Single device image */}
+        <div className="hero-anim--device absolute left-1/2 bottom-0 w-[38cqw] -translate-x-1/2">
           <Image
-            src="/assets/iphone-frame.png"
-            alt=""
-            aria-hidden="true"
-            fill
-            sizes="40vw"
-            className="pointer-events-none object-cover"
+            src="/assets/hero-device.png"
+            alt="Tampilan aplikasi Awwabi di ponsel"
+            width={1080}
+            height={1080}
+            priority
+            className="w-full h-auto drop-shadow-[0_0_60px_rgba(0,0,0,0.25)]"
           />
-          <div className="absolute left-[14.097cqw] top-[2.569cqw] flex h-[2.292cqw] w-[7.569cqw] items-center justify-end rounded-[3.47cqw] bg-black pr-[0.55cqw]">
-            <Image
-              src="/assets/lens.svg"
-              alt=""
-              aria-hidden="true"
-              width={14}
-              height={14}
-              className="h-[0.97cqw] w-[0.97cqw]"
-            />
-          </div>
         </div>
 
         {/* Desktop Text Content - Bottom fade + headline */}
@@ -67,7 +47,7 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Mobile Layout - Matches Figma frame 5091:60 (522×1102) proportions */}
+      {/* Mobile Layout */}
       <div className="md:hidden relative flex min-h-screen flex-col overflow-hidden">
         {/* Background image */}
         <Image
@@ -80,7 +60,7 @@ export function Hero() {
           className="pointer-events-none object-cover"
         />
 
-        {/* Text Content - Figma: top 185/1102 ≈ 17%, width 439/522 ≈ 84% */}
+        {/* Text Content */}
         <div className="relative z-10 px-6 pt-[19%] text-center">
           <h1 className="hero-anim--title mx-auto w-[84%] max-w-[439px] font-serif text-[clamp(34px,9vw,48px)] font-normal leading-[1.16] tracking-[-0.5px] text-yellow-800">
             {hero.title}
@@ -90,39 +70,16 @@ export function Hero() {
           </p>
         </div>
 
-        {/* Phone mockup - Figma: width 435/522 ≈ 83%, anchored bottom */}
+        {/* Phone mockup - Single device image */}
         <div className="relative z-10 mt-auto flex justify-center">
-          <div className="hero-anim--device relative w-[83%] max-w-[435px] aspect-[435/891] translate-y-[6%]">
-            <div className="absolute inset-x-[1%] inset-y-0 rounded-[10%] bg-black opacity-[0.30] shadow-[0_0_50px_0_rgba(0,0,0,0.6)]" />
-            <div className="absolute inset-[1.94%_4.44%_1.94%_4.67%] overflow-hidden rounded-[3.4%]">
-              <Image
-                src="/assets/phone-screenshot.png"
-                alt="Tampilan aplikasi Awwabi di ponsel"
-                width={1236}
-                height={2751}
-                className="absolute -left-[0.26%] -top-[0.06%] h-[102.83%] w-full object-cover"
-              />
-            </div>
+          <div className="hero-anim--device relative w-[85%] max-w-[460px] translate-y-[6%]">
             <Image
-              src="/assets/iphone-frame.png"
-              alt=""
-              aria-hidden="true"
-              fill
-              sizes="83vw"
-              className="pointer-events-none object-cover"
+              src="/assets/hero-device.png"
+              alt="Tampilan aplikasi Awwabi di ponsel"
+              width={1080}
+              height={1080}
+              className="w-full h-auto drop-shadow-[0_0_40px_rgba(0,0,0,0.2)]"
             />
-            {/* Dynamic Island */}
-            <div className="absolute left-[46.7%] top-[4.1%] flex h-[3.7%] w-[25%] items-center justify-end rounded-[50px] bg-black pr-[6%]">
-              <div className="relative h-[40%] w-[12%]">
-                <Image
-                  src="/assets/lens.svg"
-                  alt=""
-                  aria-hidden="true"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </div>

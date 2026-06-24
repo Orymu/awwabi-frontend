@@ -3,7 +3,7 @@
  */
 
 export const hero = {
-  title: 'Mulai Harimu dengan Awwabi yang Penuh Makna',
+  title: 'Mulai Harimu dengan Niyyah yang Penuh Makna',
   subtitle:
     'Habit tracker pertama yang dirancang khusus untuk muslimah melacak ibadah, produktivitas, dan pertumbuhan dirimu setiap hari.',
 } as const
