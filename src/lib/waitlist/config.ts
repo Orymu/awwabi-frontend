@@ -36,7 +36,7 @@ export function getWaitlistConfig(): WaitlistConfig {
     projectId: process.env.FIREBASE_PROJECT_ID,
     productId: process.env.WAITLIST_PRODUCT_ID,
     hashSecret:
-      process.env.WAITLIST_HASH_SECRET ??
+      process.env.WAITLIST_HASH_SECRET ||
       (process.env.FIRESTORE_EMULATOR_HOST
         ? 'local-emulator-secret-not-for-production'
         : undefined),
