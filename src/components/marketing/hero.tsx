@@ -67,42 +67,17 @@ export function Hero() {
           </p>
         </div>
 
-        {/* Phone mockup - Layered frame + screenshot for mobile */}
+        {/* Phone mockup - Same device image as desktop */}
         <div className="relative z-10 mt-auto flex justify-center">
-          <div className="hero-anim--device relative w-[95%] max-w-[500px] aspect-[435/891] -translate-x-[2%] translate-y-[4%]">
-            {/* Shadow behind phone */}
-            <div className="absolute inset-x-[1%] inset-y-0 rounded-[10%] bg-black opacity-[0.25] shadow-[0_0_50px_0_rgba(0,0,0,0.5)]" />
-            {/* Screenshot inside */}
-            <div className="absolute inset-[1.94%_4.44%_1.94%_4.67%] overflow-hidden rounded-[3.4%]">
-              <Image
-                src="/assets/phone-screenshot.png"
-                alt="Tampilan aplikasi Awwabi di ponsel"
-                width={1236}
-                height={2751}
-                className="absolute -left-[0.26%] -top-[0.06%] h-[102.83%] w-full object-cover"
-              />
-            </div>
-            {/* Phone frame */}
+          <div className="hero-anim--device relative w-[85%] max-w-[420px] translate-y-[6%]">
             <Image
-              src="/assets/iphone-frame.png"
-              alt=""
-              aria-hidden="true"
-              fill
-              sizes="95vw"
-              className="pointer-events-none object-cover"
+              src="/assets/hero-device.png"
+              alt="Tampilan aplikasi Awwabi di ponsel"
+              width={1080}
+              height={1080}
+              priority
+              className="w-full h-auto drop-shadow-[0_0_40px_rgba(0,0,0,0.20)]"
             />
-            {/* Dynamic Island */}
-            <div className="absolute left-[46.7%] top-[4.1%] flex h-[3.7%] w-[25%] items-center justify-end rounded-[50px] bg-black pr-[6%]">
-              <div className="relative h-[40%] w-[12%]">
-                <Image
-                  src="/assets/lens.svg"
-                  alt=""
-                  aria-hidden="true"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </div>
