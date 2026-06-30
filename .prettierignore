@@ -1,0 +1,7 @@
+.env*
+.firebaserc
+.next
+node_modules
+package-lock.json
+public/assets
+firestore.rules

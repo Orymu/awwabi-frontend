@@ -25,7 +25,12 @@
 
 /* Plain CSS custom props for gradients / values not expressible as @theme. */
 :root {
-  --gradient-amber: linear-gradient(180deg, #c17a43 0%, #b86c30 45%, #b45309 100%);
+  --gradient-amber: linear-gradient(
+    180deg,
+    #c17a43 0%,
+    #b86c30 45%,
+    #b45309 100%
+  );
   --chip-rose: linear-gradient(180deg, #be123c 0%, #9f1239 100%);
   --chip-orange: linear-gradient(180deg, #cc2c02 0%, #a1240b 100%);
   --chip-green: #15803d;
@@ -57,11 +62,11 @@ body {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
   }
-  
+
   body {
     overflow-x: hidden;
   }
-  
+
   * {
     /* Prevent horizontal scroll issues */
     max-width: 100%;
@@ -189,7 +194,7 @@ body {
   .hero-anim--subtitle {
     transform: translateY(12px);
   }
-  
+
   @keyframes hero-rise {
     to {
       opacity: 1;
@@ -245,16 +250,20 @@ body {
    ============================================================ */
 @media (max-width: 768px) {
   /* Better tap targets */
-  button, a, [role="button"] {
+  button,
+  a,
+  [role='button'] {
     min-height: 44px;
     min-width: 44px;
   }
-  
+
   /* Improve form interactions */
-  input, textarea, select {
+  input,
+  textarea,
+  select {
     font-size: 16px; /* Prevents zoom on iOS */
   }
-  
+
   /* Better scrolling on mobile */
   * {
     -webkit-overflow-scrolling: touch;

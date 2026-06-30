@@ -15,10 +15,13 @@ export default function PrivacyPage() {
       </h1>
       <p className="font-body text-base leading-7 text-muted">
         {siteConfig.name} menghormati privasimu. Data yang kamu daftarkan pada
-        waiting list hanya digunakan untuk mengabarkan peluncuran {siteConfig.product}{' '}
-        dan tidak dibagikan kepada pihak ketiga.
+        waiting list hanya digunakan untuk mengabarkan peluncuran{' '}
+        {siteConfig.product} dan tidak dibagikan kepada pihak ketiga.
       </p>
-      <Link href="/" className="font-ui text-sm font-medium text-yellow-800 hover:underline">
+      <Link
+        href="/"
+        className="font-ui text-sm font-medium text-yellow-800 hover:underline"
+      >
         ← Kembali ke beranda
       </Link>
     </main>

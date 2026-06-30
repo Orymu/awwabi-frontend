@@ -21,7 +21,10 @@ export default function AboutPage() {
         dan menjaga niat secara sederhana dan visual, agar perjalanan istiqomah
         terasa lebih ringan dan konsisten.
       </p>
-      <Link href="/" className="font-ui text-sm font-medium text-yellow-800 hover:underline">
+      <Link
+        href="/"
+        className="font-ui text-sm font-medium text-yellow-800 hover:underline"
+      >
         ← Kembali ke beranda
       </Link>
     </main>

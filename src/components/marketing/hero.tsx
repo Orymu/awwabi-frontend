@@ -3,10 +3,7 @@ import { hero } from '@/app/home-content'
 
 export function Hero() {
   return (
-    <section
-      id="home"
-      className="relative w-full overflow-hidden bg-subtile"
-    >
+    <section id="home" className="relative w-full overflow-hidden bg-subtile">
       {/* Desktop Layout */}
       <div className="max-md:hidden relative aspect-[1440/926] [container-type:inline-size]">
         <Image
