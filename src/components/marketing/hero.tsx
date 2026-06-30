@@ -45,7 +45,7 @@ export function Hero() {
       </div>
 
       {/* Mobile Layout */}
-      <div className="md:hidden relative flex flex-col overflow-hidden" style={{ minHeight: '100svh' }}>
+      <div className="md:hidden relative flex flex-col overflow-hidden">
         {/* Background image */}
         <Image
           src="/assets/hero-bg.png"
@@ -68,15 +68,15 @@ export function Hero() {
         </div>
 
         {/* Phone mockup - Same device image as desktop */}
-        <div className="relative z-10 mt-auto flex justify-center">
-          <div className="hero-anim--device relative w-[85%] max-w-[420px] translate-y-[6%]">
+        <div className="relative z-10 mt-6 flex justify-center">
+          <div className="hero-anim--device relative w-[92%] max-w-[480px] translate-y-[6%]">
             <Image
               src="/assets/hero-device.png"
               alt="Tampilan aplikasi Awwabi di ponsel"
               width={1080}
               height={1080}
               priority
-              className="w-full h-auto drop-shadow-[0_0_40px_rgba(0,0,0,0.20)]"
+              className="w-full h-auto drop-shadow-[0_0_50px_rgba(0,0,0,0.22)]"
             />
           </div>
         </div>
